@@ -1,78 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 body{
-    background: red;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Poppins", sans-serif;
 }
 
 .container{
-    width: 420px;
+    width: 500px;
+    padding: 30px;
     background-color: #fff;
     border-radius: 10px;
-    padding: 24px 28px 45px;
-    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
-    
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .container h1{
     text-align: center;
-    font-size: 28px;
+    font-size: 24px;
+    font-weight: 500;
     margin-bottom: 20px;
 }
 
-.container .search {
+.container .search{
     position: relative;
-    margin: 36px 0px;
+    margin: 16px 0px;
 }
 
-.container .search input {
-    height: 53px;
-    width: 100%;
-    outline: none;
-    font-size: 16px;
-    border-radius: 5px;
-    padding: 0 36px;
-    border: 1px solid gray;
+input[type="text"]{
+        height: 60px;
+        padding: 0px 40px;
+        width: 100%;
+        outline: none;
+        border-radius: 10px;
+        font-size: 16px;
+        border: 1px solid gray;
 }
 
-.seach .fas{
+.search i{
     position: absolute;
-    left: 18px;
-    pointer-events: none;
-    font-size: 16px;
+    top: 19px;
+    left: 10px;
+    font-size: 20px;
+    color: gray;
+}
+
+
+.search span{
+    display: none;
+    color: gray;
+    
+}
+
+.search input:valid ~  span{
+    display: block  ;
+}
+
+
+.search span{
+    position: absolute;
+    right: 8px;
+    top: 14px;
 }
 
 .container .info-text {
     font-size: 15px;
     color: black;
-    margin: 0 0 -20px;
-    text-align: center;}
-
-
-    .search  :where(i) {
-        position: absolute;
-        color: rgb(247, 5, 5);
-       
-    }
-
-    .search .search-icon{
-        left: 0;
-        top: 14px;
-        font-size: 20px;
-        margin-left: 6px;
-    }
-
-    .search .x-icon{
-        right: 0;
-        font-size: 20px;
-        top: 12px;
-        margin-right: 6px;
-    }
+    margin: 0 0 20px;
+    text-align: center;
+}
