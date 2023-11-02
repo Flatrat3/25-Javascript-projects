@@ -5,7 +5,11 @@ let synoymsList = document.querySelector(" .synoyms .list");
 let antoymsList = document.querySelector(" .antonymus .list");
 let links = document.querySelector(".source span");
 let volume = document.querySelector(".word i");
-console.log(volume);
+let removeIcon = document.querySelector(".material-icons")
+console.log(removeIcon)
+
+
+// console.log(volume);
 let audio;
 
 // Sending data when clicking enter
@@ -85,4 +89,14 @@ volume.addEventListener("click", function(){
              setTimeout(() => {
               volume.style.color = "gray"
             }, 800);
+})
+
+// Reset
+removeIcon.addEventListener("click", function(){
+
+  inputText.value = ""
+  inputText.focus()
+  container.classList.remove("active");
+  infoText.innerHTML = "Type a word & click 'ENTER' to get the results.";
+
 })
