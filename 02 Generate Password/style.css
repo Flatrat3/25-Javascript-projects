@@ -3,3 +3,115 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: #f4d03f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.container h5 {
+  text-align: center;
+}
+
+.output {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #78780c;
+  border-radius: 6px;
+  padding-left: 10px;
+  margin-bottom: 16px;
+}
+
+.output input[type="text"] {
+  all: unset;
+  height: 28px;
+}
+
+.refresh-btn {
+  all: unset;
+  background: #f4d03f;
+  width: 300px;
+  display: block;
+  height: 28px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.password-length {
+  margin-bottom: 16px;
+  color: #f4d03f;
+}
+
+.password-length input {
+  -webkit-appearance: none;
+  height: 7px;
+  width: 310px;
+  background: #f4d03f;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.setting {
+  margin-bottom: 10px;
+}
+
+.setting h3 {
+  color: #f4d03f;
+}
+
+.setting div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.setting div input[type="checkbox"] {
+  -webkit-appearance: none;
+  height: 18px;
+  width: 18px;
+  background: #f4d03f;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.container .setting div input[type="checkbox"]:checked {
+  background: #78780c;
+  transition: all 0.2s;
+}
+
+/* Create verify icom */
+.container .setting div input[type="checkbox"]:checked::after {
+  display: block;
+  color: #fff;
+  transition: all 0.2s;
+}
+
+.container .setting div input[type="checkbox"]::after {
+  content: "\e5ca";
+  font-family: "Material Icons";
+  position: absolute;
+  display: none;
+}
+
+::selection {
+  background: #f4d03f;
+}
