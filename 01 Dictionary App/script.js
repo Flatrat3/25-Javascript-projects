@@ -1,7 +1,11 @@
 const inputText = document.querySelector("input");
 const container = document.querySelector(".container");
 const infoText = document.querySelector(".info-text");
-let synoymsList = document.querySelector(".list");
+let synoymsList = document.querySelector(" .synoyms .list");
+let antoymsList = document.querySelector(" .antonymus .list");
+let links = document.querySelector(".source span");
+let volume = document.querySelector(".word i");
+console.log(volume);
 let audio;
 
 // Sending data when clicking enter
@@ -39,8 +43,9 @@ function fetchApi(word) {
             ".meaning span"
           ).innerText = `${data[0].meanings[0].definitions[0].definition}`;
           let span = document.querySelector(".synoyms span");
+          // Auido
           audio = new Audio(data[0].phonetics[0].audio);
-          console.log(audio);
+          // console.log(audio);
           let synonyms = data[0].meanings[0].synonyms;
 
           if (data[0].meanings[0].synonyms[0] === undefined) {
@@ -48,11 +53,36 @@ function fetchApi(word) {
           } else {
             synoymsList.innerHTML = "";
             for (let i = 0; i < synonyms.length; i++) {
-              let tag = `<span>${data[0].meanings[0].synonyms[i]},</span>`;
+              let tag = `<span>${synonyms[i]},</span>`;
               synoymsList.insertAdjacentHTML("beforeend", tag);
             }
           }
+
+          let antonyms = data[0].meanings[0].antonyms;
+          console.log(antonyms);
+
+          if (data[0].meanings[0].antonyms[0] === undefined) {
+            antoymsList.innerHTML = "NA";
+          } else {
+            antoymsList.innerHTML = "";
+            for (let i = 0; i < antonyms.length; i++) {
+              let tag = `<span>${antonyms[i]} ,</span>`;
+              antoymsList.insertAdjacentHTML("beforeend", tag);
+            }
+          }
+
+          links.innerHTML = `<a href="${data[0].sourceUrls[0]}" target="_blank">${data[0].sourceUrls[0]}</a>`;
         }
       });
   } catch (error) {}
 }
+
+//For volume button
+
+volume.addEventListener("click", function(){
+            volume.style.color = "red"
+            audio.play()
+             setTimeout(() => {
+              volume.style.color = "gray"
+            }, 800);
+})
