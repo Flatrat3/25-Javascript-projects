@@ -24,6 +24,8 @@ body {
   border-radius: 10px;
   padding: 20px 30px;
   width: auto;
+  position: relative;
+  transition: all 0.3s;
 }
 
 h1 {
@@ -72,4 +74,11 @@ button {
 .result {
   text-align: center;
   font-size: 28px;
+}
+
+i {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 }
