@@ -2,6 +2,7 @@
 
 let darkModeIcon = document.getElementById("darkModeIcon");
 let container = document.querySelector(".container");
+let result = document.querySelector(".result");
 
 let isDarkMode = false;
 
@@ -11,15 +12,15 @@ darkModeIcon.addEventListener("click", () => {
     if (isDarkMode) {
         container.style.backgroundColor = "black";
         darkModeIcon.style.color = "white";
+        result.style.color = "red";
     } else {
         container.style.backgroundColor = "white";
         darkModeIcon.style.color = "black";
+        result.style.color = "black";
     }
 });
 
 const age = () => {
-    let result = document.querySelector(".result");
-
     let d1 = document.getElementById("d1").value;
     let m1 = document.getElementById("m1").value;
     let y1 = document.getElementById("y1").value;
@@ -55,8 +56,12 @@ const age = () => {
         let month = m2 - m1;
         let day = d2 - d1;
 
-        result.innerHTML = `Your age ${year}, month ${month}, day ${day}`;
+        if (container.style.backgroundColor == "black") {
+            result.style.color = "red";
+            result.innerHTML = `Your age ${year}, month ${month}, day ${day}`;
+        } else {
+            result.style.color = "black";
+            result.innerHTML = `Your age ${year}, month ${month}, day ${day}`;
+        }
     }
-
-
 };
