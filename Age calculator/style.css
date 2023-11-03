@@ -66,4 +66,10 @@ button {
   display: block;
   margin: 16px auto;
   color: #fff;
+  cursor: pointer;
+}
+
+.result {
+  text-align: center;
+  font-size: 28px;
 }
