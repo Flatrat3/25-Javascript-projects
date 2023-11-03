@@ -33,6 +33,8 @@ generate_btn.addEventListener("click", () => {
             );
         }
         input.value = password;
+    } else{
+        alert('Please select at least one character type')
     }
 });
 
@@ -56,5 +58,5 @@ checkboxs.forEach((element) => {
 
 copy_btn.addEventListener('click', () => {
     navigator.clipboard.writeText(input.value);
-    console.log(navigator.clipboard.writeText(input.value))
+    alert( "Copy allowed: " + input.value)
 });
