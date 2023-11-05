@@ -20,14 +20,16 @@ function calculate(event) {
     }
 
     time = setInterval(update, 1000);
+    console.log(time)
 
     function update() {
       let todayDate = new Date();
       // Azerbaijan time zone
       let birthdayDate = new Date(birthdayValue + 'T00:00:00');
       let timeDifference = birthdayDate - todayDate;
+      // console.log(timeDifference)
 
-      if (timeDifference === 0) {
+      if (timeDifference <= 0) {
         message.style.display = "block";
         container.style.display = "none";
         animation.style.display = "block";
