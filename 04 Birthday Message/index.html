@@ -11,9 +11,10 @@
 <body>
 
     <!--  -->
-    <div class="container">
+
+    <div class="container ">
         <h1>Birthday Timer</h1>
-        <form>
+        <form onsubmit="calculate(event)">
             <input type="date" name="birthday" id="birthday">
             <button class="birtday-time-button">Learn Birtday time</button>
         </form>
@@ -21,14 +22,19 @@
         <h3>Doğum gününe şu kadar kaldı:</h3>
 
         <ul class="time-left">
-            <li><span>Hour</span></li>
-            <li><span>Minutes</span></li>
-            <li><span>Second</span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
         </ul>
 
 
     </div>
-    <div class="message">Congratulations</div>
+    <div class="message bounce-in-top">Congratulations</div>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+    <dotlottie-player id="animation" src="https://lottie.host/55ed66f5-b5e1-43e2-ba19-384968d2c021/C9HCKMI8YZ.json"
+        background="transparent" speed="1" style="width: 300px; height: 300px; display: none;" loop
+        autoplay></dotlottie-player>
 
 
 
