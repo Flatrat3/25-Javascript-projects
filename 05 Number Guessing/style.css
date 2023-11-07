@@ -1,0 +1,79 @@
+/* Reset css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-bg-color: background-color: #00DBDE;
+    background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+    --main-container-color:  #fff;
+    --second-bg-color: #5959fa;
+    --main-size-8: 0.5em;
+    --main-size-16: 1em;
+    --main-size-24: 1.5em;
+    --main-size-32: 2em;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    color: var(--main-container-color);
+    border: 1px solid #fff;
+    margin-bottom: var(--main-size-8);
+    border-radius: 6px;
+    padding: var(--main-size-8) var(--main-size-16);
+    background-color: var(--second-bg-color)
+}
+
+.container{
+    width: 400px;
+    text-align: center;
+    color: var(--main-container-color);
+    border: 1px solid #fff;
+    border-radius: 6px;
+    background-color: var(--second-bg-color);
+}
+
+.container h3 {
+    margin: var(--main-size-8) 0;
+    font-size: var(--main-size-24);
+}
+
+.container input[type="text"]{
+    text-align: center;
+border: 4px solid darkblue;    
+width: 80%;
+padding: 0 var(--main-size-16);
+height: 50px;
+border-radius: 6px;
+margin: var(--main-size-8);
+outline: none;
+font-size: var(--main-size-24);
+}
+
+.container :where(.message, .left-chance)    {
+    font-size: var(--main-size-24);
+    margin-bottom: var(--main-size-8);
+}
+
+.container button{
+    font-size: var(--main-size-16);
+    margin: var(--main-size-8) 0;
+    padding: var(--main-size-8) calc(var(--main-size-32) + var(--main-size-8));
+    color: white;
+    background: #1446a0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
