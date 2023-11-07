@@ -1,5 +1,4 @@
 // Getting HTML Elements
-
 const input = document.getElementById("input");
 const message = document.querySelector(".message");
 const guessButton = document.querySelector(".guess-btn");
@@ -8,6 +7,9 @@ let pElement = chance.parentElement;
 let leftChance = 3;
 let randomNumber = Math.floor(Math.random() * 100);
 console.log(randomNumber);
+let congratsAudio = new Audio("./clap.wav");
+let failAuido = new Audio("./Fail Sound Effects.mp3")
+
 
 input.addEventListener("keyup", (e) => {
   // console.log(e)
@@ -24,7 +26,7 @@ function guess() {
   if (inputValue == "") {
     alert("Please add a number");
   } else {
-    if (leftChance <= 3 && leftChance >= 1) {
+    if (leftChance <= 3 && leftChance >= 2) {
       leftChance--;
       chance.textContent = `${leftChance} `;
       if (inputValue > randomNumber) {
@@ -33,6 +35,7 @@ function guess() {
         message.textContent = "Your Guess is low👎.";
       } else if (inputValue === randomNumber) {
         message.textContent = `Congratulation You Win! The Number was ${randomNumber}`;
+        congratsAudio.play()
         guessButton.remove();
         pElement.remove();
       } else {
@@ -40,6 +43,7 @@ function guess() {
       }
     } else {
       message.textContent = "You Lose the Game, Try Again Next Time";
+      failAuido.play()
       pElement.textContent = `Correct number was  ${randomNumber}`;
       guessButton.remove();
     }
