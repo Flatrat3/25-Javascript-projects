@@ -5,7 +5,7 @@ const message = document.querySelector(".message");
 const guessButton = document.querySelector(".guess-btn");
 const chance = document.querySelector(".left-chance span");
 let pElement = chance.parentElement;
-let leftChance = 10;
+let leftChance = 3;
 let randomNumber = Math.floor(Math.random() * 100);
 console.log(randomNumber);
 
@@ -24,14 +24,14 @@ function guess() {
   if (inputValue == "") {
     alert("Please add a number");
   } else {
-    leftChance--;
-    chance.textContent = `${leftChance} `;
-    if (leftChance <= 10 && leftChance > 0) {
+    if (leftChance <= 3 && leftChance >= 1) {
+      leftChance--;
+      chance.textContent = `${leftChance} `;
       if (inputValue > randomNumber) {
         message.textContent = "Your Guess is High👍.";
       } else if (inputValue < randomNumber) {
         message.textContent = "Your Guess is low👎.";
-      } else if (inputValue == randomNumber) {
+      } else if (inputValue === randomNumber) {
         message.textContent = `Congratulation You Win! The Number was ${randomNumber}`;
         guessButton.remove();
         pElement.remove();
