@@ -26,9 +26,12 @@ function guess() {
   if (inputValue == "") {
     alert("Please add a number");
   } else {
-    if (leftChance <= 3 && leftChance >= 2) {
+    if (leftChance > 0) {
       leftChance--;
       chance.textContent = `${leftChance} `;
+      input.value = ""
+      input.focus()
+      console.log(leftChance)
       if (inputValue > randomNumber) {
         message.textContent = "Your Guess is High👍.";
       } else if (inputValue < randomNumber) {
