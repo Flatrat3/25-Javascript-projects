@@ -2,6 +2,9 @@
 
 :root {
   --main-bg-color: #19172e;
+  --white-color: #fff;
+  --button-color: #333;
+  --button-hover-color: #282b78;
 }
 
 @font-face {
@@ -17,4 +20,65 @@
 
 body {
   background-color: var(--main-bg-color);
+}
+
+h2 {
+  color: var(--white-color);
+  text-align: center;
+  margin-top: 1em;
+  font-size: 2em;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  display: block;
+  background-color: var(--button-color);
+  color: var(--white-color);
+  font-size: 1.5em;
+  padding: 15px 36px;
+  margin: 1em auto;
+  border-radius: 0.5em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn:hover {
+  background-color: var(--button-hover-color);
+}
+
+.copy {
+  color: var(--white-color);
+  padding: 15px 30px;
+  font-size: 1.5em;
+  background: var(--button-color);
+  cursor: not-allowed;
+  border-radius: 10px;
+  border: none;
+  user-select: none;
+  margin: 20px auto;
+}
+
+/* Boxes */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container .box {
+  width: 33.3%;
+  height: 150px;
+  border: 2px solid var(--main-bg-color);
+  border-radius: 8px;
+  font-size: 1.5rem;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
