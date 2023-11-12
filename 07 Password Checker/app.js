@@ -2,7 +2,7 @@
 let userInput = document.getElementById("password")
 let eye = document.querySelector(".container .inputBox .fa-eye")
 let eyeSlash = document.querySelector(".container .inputBox .fa-eye-slash")
-console.log(userInput.type); //password
+// console.log(userInput.type); //password
 let minLenght = document.getElementById("length")
 let lowerCase = document.getElementById("lowercase")
 let upperCase = document.getElementById("uppercase")
@@ -34,11 +34,20 @@ function checkPassword() {
     // console.log(passLength.test(value));
     const lower = new RegExp('(?=.*[a-z])')
     const upper = new RegExp('(?=.*[A-Z])')
-    const number = new RegExp('?=.*[0-9]')
-    const special = newRegExp('?=.*[!@#$%^&*()]')
+    const number = new RegExp('(?=.*[0-9])')
+    const special = new RegExp('(?=.*[!@#$%^&*()])')
 
 
-// 
+    //! check pass
+    if (passLength.test(value)) {
+        // console.log(minLenght.firstChild.nextSibling);
+        minLenght.firstChild.nextSibling.style.background = "blue"
+        // console.log(minLenght.lastChild.previousSibling);
+        minLenght.lastChild.previousSibling.style.color = "gray"
+    } else {
+        minLenght.firstChild.nextSibling.style.background = "gray"
+        minLenght.lastChild.previousSibling.style.color = "black"
+    }
 
 
 }
