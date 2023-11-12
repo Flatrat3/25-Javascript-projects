@@ -7,9 +7,51 @@
     <title>Password Checker</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
+    <div class="container">
+        <h1>Password Checker</h1>
+        <!-- Input box -->
+        <div class="inputBox">
+            <input type="password" id="password" placeholder="Enter  password">
+            <i class="fa-regular fa-eye"></i>
+            <i class="fa-regular fa-eye-slash"></i>
+        </div>
+        <!-- Validation box -->
+        <div class="validationBox">
+            <h3>Password should be</h3>
+            <ul>
+                <li id="length">
+                    <i class="fa-sharp fa-solid fa-check"></i>
+                    <span>Atleast 8 characters long</span>
+                </li>
+                <li id="lowercase">
+                    <i class="fa-sharp fa-solid fa-check"></i>
+                    <span>Atleast one lowercase</span>
+                </li>
+                <li id="uppercase">
+                    <i class="fa-sharp fa-solid fa-check"></i>
+                    <span>Atleast one uppercase</span>
+                </li>
+                <li id="number">
+                    <i class="fa-sharp fa-solid fa-check"></i>
+                    <span>Atleast one number</span>
+                </li>
+                <li id="speacial-character">
+                    <i class="fa-sharp fa-solid fa-check"></i>
+                    <span>Atleast one special character</span>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+
     <script src="app.js"></script>
 </body>
 
