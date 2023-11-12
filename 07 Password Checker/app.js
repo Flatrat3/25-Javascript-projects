@@ -6,8 +6,13 @@ let eyeSlash = document.querySelector(".container .inputBox .fa-eye-slash")
 let minLenght = document.getElementById("length")
 let lowerCase = document.getElementById("lowercase")
 let upperCase = document.getElementById("uppercase")
+<<<<<<< HEAD
 let numberCase = document.getElementById("number")
 let specialCase = document.getElementById("speacial-character")
+=======
+let number = document.getElementById("number")
+let specialCharcter = document.getElementById("speacial-character")
+>>>>>>> 4c5a55dd7fed4de9baf518f637ac0702acc09407
 
 // PassToggle
 function passToggle() {
@@ -35,7 +40,11 @@ function checkPassword() {
     const lower = new RegExp('(?=.*[a-z])')
     const upper = new RegExp('(?=.*[A-Z])')
     const number = new RegExp('(?=.*[0-9])')
+<<<<<<< HEAD
     const special = new RegExp('(?=.*[!@#$%^&*()_+{}|":;<>,.?/~`\\[\\]\\\\])');
+=======
+    const special = new RegExp('(?=.*[!@#$%^&*()])')
+>>>>>>> 4c5a55dd7fed4de9baf518f637ac0702acc09407
 
 
     //! check pass
@@ -52,11 +61,15 @@ function checkPassword() {
     // Check lowerCase
 
     if (lower.test(value)) {
+<<<<<<< HEAD
         // console.log(lowerCase.firstChild.nextSibling);
+=======
+>>>>>>> 4c5a55dd7fed4de9baf518f637ac0702acc09407
         lowerCase.firstChild.nextSibling.style.background = "blue"
         lowerCase.lastChild.previousSibling.style.color = "gray"
     } else {
         lowerCase.firstChild.nextSibling.style.background = "gray"
+<<<<<<< HEAD
         lowerCase.lastChild.previousSibling.style.color = "black"
     }
 
@@ -64,10 +77,18 @@ function checkPassword() {
 
     if (upper.test(value)) {
         // console.log(upperCase.firstChild.nextSibling);
+=======
+        lowerCase.lastChild.previousSibling.style.color = "blue"
+    }
+
+    // Check upperCase
+    if (upper.test(value)) {
+>>>>>>> 4c5a55dd7fed4de9baf518f637ac0702acc09407
         upperCase.firstChild.nextSibling.style.background = "blue"
         upperCase.lastChild.previousSibling.style.color = "gray"
     } else {
         upperCase.firstChild.nextSibling.style.background = "gray"
+<<<<<<< HEAD
         upperCase.lastChild.previousSibling.style.color = "black"
     }
 
@@ -91,6 +112,11 @@ function checkPassword() {
         specialCase.firstChild.nextSibling.style.background = "gray"
         specialCase.lastChild.previousSibling.style.color = "black"
     }
+=======
+        upperCase.lastChild.previousSibling.style.color = "blue"
+    }
+
+>>>>>>> 4c5a55dd7fed4de9baf518f637ac0702acc09407
 
 }
 
