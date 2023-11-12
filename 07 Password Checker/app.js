@@ -6,13 +6,8 @@ let eyeSlash = document.querySelector(".container .inputBox .fa-eye-slash")
 let minLenght = document.getElementById("length")
 let lowerCase = document.getElementById("lowercase")
 let upperCase = document.getElementById("uppercase")
-<<<<<<< HEAD
 let numberCase = document.getElementById("number")
 let specialCase = document.getElementById("speacial-character")
-=======
-let number = document.getElementById("number")
-let specialCharcter = document.getElementById("speacial-character")
->>>>>>> 4c5a55dd7fed4de9baf518f637ac0702acc09407
 
 // PassToggle
 function passToggle() {
@@ -28,7 +23,6 @@ function passToggle() {
 }
 
 
-
 function checkPassword() {
 
     let value = userInput.value
@@ -40,11 +34,7 @@ function checkPassword() {
     const lower = new RegExp('(?=.*[a-z])')
     const upper = new RegExp('(?=.*[A-Z])')
     const number = new RegExp('(?=.*[0-9])')
-<<<<<<< HEAD
     const special = new RegExp('(?=.*[!@#$%^&*()_+{}|":;<>,.?/~`\\[\\]\\\\])');
-=======
-    const special = new RegExp('(?=.*[!@#$%^&*()])')
->>>>>>> 4c5a55dd7fed4de9baf518f637ac0702acc09407
 
 
     //! check pass
