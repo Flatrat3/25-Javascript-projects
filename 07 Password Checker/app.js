@@ -7,7 +7,7 @@ let minLenght = document.getElementById("length")
 let lowerCase = document.getElementById("lowercase")
 let upperCase = document.getElementById("uppercase")
 let numberCase = document.getElementById("number")
-let specialCharcter = document.getElementById("speacial-character")
+let specialCase = document.getElementById("speacial-character")
 
 // PassToggle
 function passToggle() {
@@ -35,7 +35,7 @@ function checkPassword() {
     const lower = new RegExp('(?=.*[a-z])')
     const upper = new RegExp('(?=.*[A-Z])')
     const number = new RegExp('(?=.*[0-9])')
-    const special = new RegExp('(?=.*[!@#$%^&*()])')
+    const special = new RegExp('(?=.*[!@#$%^&*()_+{}|":;<>,.?/~`\\[\\]\\\\])');
 
 
     //! check pass
@@ -52,29 +52,43 @@ function checkPassword() {
     // Check lowerCase
 
     if (lower.test(value)) {
+        // console.log(lowerCase.firstChild.nextSibling);
         lowerCase.firstChild.nextSibling.style.background = "blue"
         lowerCase.lastChild.previousSibling.style.color = "gray"
     } else {
         lowerCase.firstChild.nextSibling.style.background = "gray"
-        lowerCase.lastChild.previousSibling.style.color = "blue"
+        lowerCase.lastChild.previousSibling.style.color = "black"
     }
 
     // Check upperCase
+
     if (upper.test(value)) {
+        // console.log(upperCase.firstChild.nextSibling);
         upperCase.firstChild.nextSibling.style.background = "blue"
         upperCase.lastChild.previousSibling.style.color = "gray"
     } else {
         upperCase.firstChild.nextSibling.style.background = "gray"
-        upperCase.lastChild.previousSibling.style.color = "blue"
+        upperCase.lastChild.previousSibling.style.color = "black"
     }
 
-    // Check Number
+    // Check number
+
     if (number.test(value)) {
         numberCase.firstChild.nextSibling.style.background = "blue"
         numberCase.lastChild.previousSibling.style.color = "gray"
     } else {
         numberCase.firstChild.nextSibling.style.background = "gray"
-        numberCase.lastChild.previousSibling.style.color = "blue"
+        numberCase.lastChild.previousSibling.style.color = "black"
+    }
+
+    // Check special character
+
+    if (special.test(value)) {
+        specialCase.firstChild.nextSibling.style.background = "blue"
+        specialCase.lastChild.previousSibling.style.color = "gray"
+    } else {
+        specialCase.firstChild.nextSibling.style.background = "gray"
+        specialCase.lastChild.previousSibling.style.color = "black"
     }
 
 
