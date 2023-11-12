@@ -49,5 +49,25 @@ function checkPassword() {
         minLenght.lastChild.previousSibling.style.color = "black"
     }
 
+    // Check lowerCase
+
+    if (lower.test(value)) {
+        lowerCase.firstChild.nextSibling.style.background = "blue"
+        lowerCase.lastChild.previousSibling.style.color = "gray"
+    } else {
+        lowerCase.firstChild.nextSibling.style.background = "gray"
+        lowerCase.lastChild.previousSibling.style.color = "blue"
+    }
+
+    // Check upperCase
+    if (upper.test(value)) {
+        upperCase.firstChild.nextSibling.style.background = "blue"
+        upperCase.lastChild.previousSibling.style.color = "gray"
+    } else {
+        upperCase.firstChild.nextSibling.style.background = "gray"
+        upperCase.lastChild.previousSibling.style.color = "blue"
+    }
+
 
 }
+
