@@ -38,7 +38,7 @@ body {
   border-radius: 6px;
 }
 
-.container input[type="password"] {
+.container input {
   border: none;
   outline: none;
   width: 80%;
