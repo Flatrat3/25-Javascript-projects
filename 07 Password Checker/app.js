@@ -87,10 +87,10 @@ function checkPassword() {
         specialCase.firstChild.nextSibling.style.background = "blue"
         specialCase.lastChild.previousSibling.style.color = "gray"
     } else {
+        console.log(specialCase);
         specialCase.firstChild.nextSibling.style.background = "gray"
         specialCase.lastChild.previousSibling.style.color = "black"
     }
-
 
 }
 
