@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
-<body>
+<body class="flex-d">
     <div class="container">
         <h1>Password Checker</h1>
         <!-- Input box -->
-        <div class="inputBox">
+        <div class="inputBox flex-d">
             <input type="password" id="password" placeholder="Enter  password">
             <i class="fa-regular fa-eye"></i>
-            <i class="fa-regular fa-eye-slash"></i>
+            <i class="fa-regular fa-eye-slash" style="display: none;"></i>
         </div>
         <!-- Validation box -->
         <div class="validationBox">
@@ -44,14 +44,10 @@
                     <span>Atleast one special character</span>
                 </li>
             </ul>
-
         </div>
 
     </div>
-
-
-
-
+    <!-- Javascript codes -->
     <script src="app.js"></script>
 </body>
 
