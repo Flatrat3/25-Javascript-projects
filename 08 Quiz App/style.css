@@ -172,3 +172,38 @@ section .option-list .option {
   align-items: center;
   justify-content: space-between;
 }
+
+footer {
+  border-top: 1px solid lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  height: 60px;
+}
+
+footer .total_que span {
+  display: flex;
+  user-select: none;
+  gap: 5px;
+  font-size: 18px;
+}
+
+footer .total_que span p {
+  font-weight: bold;
+}
+
+footer button {
+  height: 40px;
+  padding: 0 13px;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 5px;
+  background: #c850c0;
+  border: 1px solid #007bff;
+  line-height: 10px;
+}
