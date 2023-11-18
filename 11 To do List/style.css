@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style-type: none;
 }
 
 body {
@@ -17,7 +18,7 @@ body {
   background-color: #fff;
   border-radius: 16px;
   padding: 16px 24px;
-  height: 400px;
+  /* height: 400px; */
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
@@ -76,4 +77,29 @@ h1 {
 .add-task-box > button:hover::after {
   transform: scaleX(1);
   transform-origin: 0% 50%;
+}
+
+li {
+  clear: both;
+  margin-bottom: 8px;
+}
+
+label {
+  font-size: 24px;
+}
+
+.delete-icon {
+  cursor: pointer;
+  float: right;
+}
+
+/* Current task here */
+.current-task {
+  margin-bottom: 30px;
+}
+
+/* Current task here */
+
+.task-container {
+  margin-top: 30px;
 }
