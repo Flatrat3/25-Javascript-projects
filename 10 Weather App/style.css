@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: greenyellow;
+}
+
+.container {
+  position: relative;
+  width: 400px;
+  height: 105px;
+  background-color: #fff;
+  padding: 28px 32px;
+  overflow: hidden;
+  border-radius: 16px;
+  transition: all 0.4s ease-in;
+}
+
+/* .container.active {
+    height: 600px;
+  } */
+
+/* Search-box */
+.search-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-box i {
+  position: absolute;
+  color: green;
+  font-size: 24px;
+  padding-bottom: 8px;
+}
+
+.search-box input {
+  color: green;
+  font-size: 18px;
+  font-weight: 500;
+  border: 0;
+  outline: none;
+  border-bottom: 2px solid green;
+  padding-left: 40px;
+  width: 80%;
+}
+
+.search-box button {
+  color: green;
+  border: none;
+  background-color: #dff6ff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 22px;
+  transition: all 0.5s ease;
+}
+
+.search-box button:hover {
+  background-color: green;
+  color: white;
+}
+/* Search box ends here */
+
+/* **************************** */
+
+/* Animation */
+
+.fadeIn {
+  animation: 0, 5s fadeIn forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.weather-box,
+.weather-details {
+  scale: 0;
+  opacity: 0;
+}
+
+/* Not-found */
+.not-found {
+  display: none;
+  scale: 0;
+  opacity: 0;
+}
+
+/* Weather box starts here */
+
+.weather-box,
+.not-found {
+  text-align: center;
+}
+
+.weather-box img,
+.not-found img {
+  width: 60%;
+  margin-top: 30px;
+}
+
+.weather-box .temperature {
+  color: green;
+  font-weight: 800;
+  font-size: 4rem;
+  margin-top: 30px;
+}
+
+.weather-box .description {
+  color: green;
+  font-size: 22px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-top: 10px;
+}
+
+/* Weather box ends here */
+
+/* Weather details starts here */
+
+.weather-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.weather-details .humidity {
+  padding-left: 20px;
+  justify-content: flex-start;
+}
+
+.weather-details i {
+  color: green;
+  font-size: 26px;
+  margin-right: 10px;
+  margin-top: 6px;
+}
+
+.weather-details .text {
+  padding-left: 10px;
+  color: green;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.weather-details .humidity,
+.weather-details .wind {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100px;
+}
+
+.weather-details .wind {
+  justify-content: flex-end;
+}
