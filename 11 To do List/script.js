@@ -1,6 +1,7 @@
 const addTaskButton = document.querySelector(".add-task");
 const task = document.querySelector("input[type='text']");
 const currentTask = document.querySelector(".current-task-list");
+const finishedTask = document.querySelector(".finished-task-list");
 
 addTaskButton.addEventListener("click", addTask);
 
@@ -23,11 +24,13 @@ function addTask() {
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener("change", function () {
                 if (this.checked) {
-                    // Add a line to the label when the checkbox is checked
                     this.nextElementSibling.style.textDecoration = "line-through";
+                    console.log(this.parentNode);
+                    moveTaskToFinished(this.parentNode);
                 } else {
-                    // Remove the line on the label when the checkbox is unchecked
                     this.nextElementSibling.style.textDecoration = "none";
+                    // Move the task back to the currentTask list
+                    moveTaskToCurrent(this.parentNode);
                 }
             });
         });
@@ -37,8 +40,18 @@ function addTask() {
         deleteIcons.forEach(deleteIcon => {
             deleteIcon.addEventListener("click", () => {
                 deleteIcon.parentNode.remove();
-            })
-        })
-
+            });
+        });
     }
+}
+// addTask ends here
+
+function moveTaskToFinished(taskElement) {
+    // Move the task to the finishedTask list
+    finishedTask.appendChild(taskElement);
+}
+
+function moveTaskToCurrent(taskElement) {
+    // Move the task back to the currentTask list
+    currentTask.appendChild(taskElement);
 }
