@@ -7,8 +7,7 @@ const weatherDetails = document.querySelector(".weather-details");
 const error404 = document.querySelector(".not-found");
 console.log(error404);
 
-// Click event
-
+// Click even
 search.addEventListener("click", () => {
     const APIKey = "828cc99e0335c9476a8f751b7c386d9a";
     // Search-input value
@@ -44,7 +43,6 @@ search.addEventListener("click", () => {
             switch (data.weather[0].main) {
                 case "Clear":
                     image.src = "images/clear.png";
-
                     break;
 
                 case "Rain":
