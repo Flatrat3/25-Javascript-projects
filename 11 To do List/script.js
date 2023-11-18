@@ -5,6 +5,12 @@ const finishedTask = document.querySelector(".finished-task-list");
 
 addTaskButton.addEventListener("click", addTask);
 
+
+task.addEventListener("keyup", function (e) {
+    if (e.key === "Enter") addTask
+
+})
+
 function addTask() {
     let taskValue = task.value.trim();
 
