@@ -6,16 +6,14 @@ const timer = document.querySelector("h1");
 const startButton = document.querySelector(".start-button");
 const pauseButton = document.querySelector(".pause-button");
 
+let timerInterval;
+
 // Addevent listeners for buttons;
-
 document.addEventListener("DOMContentLoaded", () => {
-    let timerInterval;
-
     function updateMod(mode, minutes, background) {
         document
             .querySelectorAll(".pomodoro-header button")
             .forEach((button) => {
-                // console.log(button);
                 button.style.border = "none";
                 button.style.color = "white";
                 button.style.fontSize = "16px";
@@ -33,17 +31,55 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     }
 
+    function updateTimer(totalSeconds) {
+        startButton.style.display = "none";
+        pauseButton.style.display = "inline-block";
+
+        let seconds = totalSeconds;
+
+        timerInterval = setInterval(() => {
+            seconds--;
+
+            const minuteDisplay = Math.floor(seconds / 60);
+            const secondDisplay = Math.floor(seconds % 60);
+
+            timer.textContent = `${minuteDisplay < 10 ? "0" : ""}${minuteDisplay}:${secondDisplay < 10 ? "0" : ""
+                }${secondDisplay}`;
+
+            if (seconds <= 0) {
+                clearInterval(timerInterval);
+                startButton.style.display = "inline-block";
+                pauseButton.style.display = "none";
+            }
+
+        }, 1000);
+    }
+
     pomodoroButton.addEventListener("click", () => {
-        updateMod("pomodoro", 25, "rgb(186, 73, 73");
+        const currentTime = timer.textContent.split(":");
+        const totalSeconds = parseInt(currentTime[0]) * 60 + parseInt(currentTime[1]);
+        updateMod("pomodoro", 25, "rgb(186, 73, 73)");
+        clearInterval(timerInterval)
     });
 
     shortBreakButton.addEventListener("click", () => {
-        updateMod("short-break", 5, "rgb(56, 133, 138");
+        const currentTime = timer.textContent.split(":");
+        const totalSeconds = parseInt(currentTime[0]) * 60 + parseInt(currentTime[1]);
+        updateMod("short-break", "01", "rgb(56, 133, 138)");
+        clearInterval(timerInterval)
     });
 
     longBreakButton.addEventListener("click", () => {
-        updateMod("long-break", 15, "rgb(57, 112, 151");
+        updateMod("long-break", 15, "rgb(57, 112, 151)");
+        clearInterval(timerInterval)
     });
+
+    startButton.addEventListener("click", () => {
+        const currentTime = timer.textContent.split(":");
+        const totalSeconds = parseInt(currentTime[0]) * 60 + parseInt(currentTime[1]);
+        updateTimer(totalSeconds);
+
+    })
 
 
 });
