@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }${secondDisplay}`;
 
             if (seconds <= 0) {
+                alert("Time is up")
                 clearInterval(timerInterval);
                 startButton.style.display = "inline-block";
                 pauseButton.style.display = "none";
@@ -56,30 +57,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     pomodoroButton.addEventListener("click", () => {
-        const currentTime = timer.textContent.split(":");
-        const totalSeconds = parseInt(currentTime[0]) * 60 + parseInt(currentTime[1]);
         updateMod("pomodoro", 25, "rgb(186, 73, 73)");
-        clearInterval(timerInterval)
+        clearInterval(timerInterval);
+        pauseButton.style.display = "none";
+        startButton.style.display = "inline-block";
     });
 
     shortBreakButton.addEventListener("click", () => {
-        const currentTime = timer.textContent.split(":");
-        const totalSeconds = parseInt(currentTime[0]) * 60 + parseInt(currentTime[1]);
         updateMod("short-break", "01", "rgb(56, 133, 138)");
         clearInterval(timerInterval)
+        pauseButton.style.display = "none";
+        startButton.style.display = "inline-block";
     });
 
     longBreakButton.addEventListener("click", () => {
         updateMod("long-break", 15, "rgb(57, 112, 151)");
         clearInterval(timerInterval)
+        pauseButton.style.display = "none";
+        startButton.style.display = "inline-block";
     });
 
     startButton.addEventListener("click", () => {
         const currentTime = timer.textContent.split(":");
         const totalSeconds = parseInt(currentTime[0]) * 60 + parseInt(currentTime[1]);
         updateTimer(totalSeconds);
-
     })
 
+    pauseButton.addEventListener("click", () => {
+        clearInterval(timerInterval);
+        pauseButton.style.display = "none";
+        startButton.style.display = "inline-block";
+    })
 
 });
