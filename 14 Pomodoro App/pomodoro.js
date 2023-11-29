@@ -53,6 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 }${secondDisplay}`;
 
             const remainingTime = (seconds / totalSeconds) * 100;
+            console.log(seconds);
+            console.log(totalSeconds);
             timeWidth.style.width = `${remainingTime}%`;
 
             if (seconds <= 0) {
@@ -70,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
         clearInterval(timerInterval);
         pauseButton.style.display = "none";
         startButton.style.display = "inline-block";
+        timeWidth.style.width = "100%"
     });
 
     shortBreakButton.addEventListener("click", () => {
@@ -77,6 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
         clearInterval(timerInterval)
         pauseButton.style.display = "none";
         startButton.style.display = "inline-block";
+        timeWidth.style.width = "100%"
     });
 
     longBreakButton.addEventListener("click", () => {
@@ -84,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
         clearInterval(timerInterval)
         pauseButton.style.display = "none";
         startButton.style.display = "inline-block";
+        timeWidth.style.width = "100%"
     });
 
     startButton.addEventListener("click", () => {
