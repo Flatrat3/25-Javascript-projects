@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(186, 73, 73);
+    color: #fff;
+}
+
+
+.time-width{
+    position: relative;
+    top: -50px;
+    height: 3px;
+    background-color: white;
+    border-radius: 100px;
+    transform: translateY(-1px);
+    width:0%;
+}
+
+.container{
+    font-weight: 300;
+    max-width: 480px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px 0px 30px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+
+
+.pomodoro-header{
+    margin-bottom: 32px;
+}
+
+h1{
+    font-size: 120px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.pomodoro-header button:first-child{
+    border: none;
+    margin: 0px;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 2px 12px;
+    height: 28px;
+    cursor: pointer;
+    background: none rgba(0, 0, 0, 0.15);
+    box-shadow: none;
+    color: white;   
+    font-weight: bold;
+}
+
+.pomodoro-header :is(:nth-child(2), :nth-child(3)){
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 2px 12px;
+    cursor: pointer;
+    background: none;
+    box-shadow: none;
+    font-weight: 300;
+}
+
+
+
+.button-container{
+    margin-block: 32px;
+}
+
+.button-container .pause-button{
+    display: none;
+}
+
+
+.button-container :is(.pause-button, .start-button, .reset-button){
+    cursor: pointer;
+    border: none;
+    margin: 20px 0px 0px;
+    padding: 0px 12px;
+    border-radius: 4px;
+    box-shadow: rgb(235, 235, 235) 0px 6px 0px;
+    font-family: ArialRounded;
+    font-size: 22px;
+    height: 55px;
+    color: rgb(186, 73, 73);
+    font-weight: bold;
+    width: 200px;
+    background-color: white;
+    transition: color 0.5s ease-in-out 0s;
+}
+
+
+.reset-button {
+    display: none;
+}
+
+.button-container :is(.pause-button, .start-button):hover{
+    transform: translateY(-5px);
+
+}
