@@ -5,6 +5,11 @@ const longBreakButton = document.querySelector(".long-break-button");
 const timer = document.querySelector("h1");
 const startButton = document.querySelector(".start-button");
 const pauseButton = document.querySelector(".pause-button");
+let audio = new Audio("Tick.mp3");
+const timeWidth = document.querySelector(".time-width");
+console.log(timeWidth);
+
+
 
 let timerInterval;
 
@@ -40,11 +45,15 @@ document.addEventListener("DOMContentLoaded", () => {
         timerInterval = setInterval(() => {
             seconds--;
 
+
             const minuteDisplay = Math.floor(seconds / 60);
             const secondDisplay = Math.floor(seconds % 60);
 
             timer.textContent = `${minuteDisplay < 10 ? "0" : ""}${minuteDisplay}:${secondDisplay < 10 ? "0" : ""
                 }${secondDisplay}`;
+
+            const remainingTime = (seconds / totalSeconds) * 100;
+            timeWidth.style.width = `${remainingTime}%`;
 
             if (seconds <= 0) {
                 alert("Time is up")
@@ -81,6 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const currentTime = timer.textContent.split(":");
         const totalSeconds = parseInt(currentTime[0]) * 60 + parseInt(currentTime[1]);
         updateTimer(totalSeconds);
+        audio.play();
     })
 
     pauseButton.addEventListener("click", () => {
