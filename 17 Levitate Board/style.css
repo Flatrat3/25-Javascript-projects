@@ -37,5 +37,9 @@ h1 {
   margin: 2px;
   background-color: rgba(95, 184, 224, 1);
   box-shadow: 0 0 2px #ffffff;
-  transition: 2s ease;
+  transition: 1s ease;
+}
+
+.square:hover {
+  transition-duration: 0s;
 }
