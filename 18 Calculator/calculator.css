@@ -43,6 +43,10 @@ body{
 
 }
 
+.calculator .display input{
+    color: yellow;
+}
+
 .display input{
     text-align: right;
     flex: 1;
