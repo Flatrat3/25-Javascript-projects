@@ -42,6 +42,8 @@ const handleFormData = (e) => {
         (input) => input.value.trim()
     );
 
+    console.log(formInputs[2]);
+
     const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
     // Clear previous errors
