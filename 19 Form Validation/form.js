@@ -36,6 +36,32 @@ const validatePassword = (password) => {
 }
 
 
+// Const handle Form data
+
+const handleFormData = (e) => {
+    e.preventDefault();
+
+    const [fullNameInput, emailInput, dateInput, genderInput] = [
+        // document.getElementById('fullname')
+        "fullname",
+        "email",
+        "date",
+        "gender"
+    ].map((id) => document.getElementById(id))
+
+
+    // Getting input value
+    const [fullname, email, password, date, gender] = [
+        fullNameInput,
+        emailInput,
+        passwordInput,
+        dateInput,
+        genderInput
+    ].map((input) => input.value.trim())
+
+
+}
+
 
 
 
