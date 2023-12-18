@@ -1,70 +1,86 @@
-
 // Getting Elements
-const form = document.querySelector(".myForm")
-let passwordInput = document.getElementById("password")
-let passToggleBtn = document.getElementById("pass-toggle-btn")
-let thankYouMessage = document.getElementById("thanks-message")
-
+const form = document.querySelector(".myForm");
+const passwordInput = document.getElementById("password");
+const passToggleBtn = document.getElementById("pass-toggle-btn");
+const thankYouMessage = document.getElementById("thanks-message");
 
 // Error handling function
 const showError = (field, errorText) => {
-    // will select field inputs
-    field.classList.add("error")
-    const errorElement = document.createElement("small")
-    errorElement.classList.add("error-text")
+    field.classList.add("error");
+    const errorElement = document.createElement("small");
+    errorElement.classList.add("error-text");
     errorElement.innerText = errorText;
-    field.closest(".form-group").appendChild(errorElement)
-}
+    field.closest(".form-group").appendChild(errorElement);
+};
 
 // Password strength check
-
 const checkPasswordStrength = (password) =>
-    // We will send the password later from the password input value
-    /^(?=.*\d)(?=.*[a-z])(?=.)(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/.test(password)
-
-
+    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/.test(password);
 
 // Validate Password
-
 const validatePassword = (password) => {
-    if (password = "") {
-        showError(passwordInput, "Enter your password")
+    if (password === "") {
+        showError(passwordInput, "Enter your password");
     } else if (!checkPasswordStrength(password)) {
-        showError(passwordInput, "Please enter at least 8 characters with a number, symbol, lowercase, and uppercase letter."
-        )
+        showError(
+            passwordInput,
+            "Please enter at least 8 characters with a number, symbol, lowercase, and uppercase letter."
+        );
     }
-}
+};
 
-
-// Const handle Form data
-
+// Handle Form data
 const handleFormData = (e) => {
     e.preventDefault();
 
-    const [fullNameInput, emailInput, dateInput, genderInput] = [
-        // document.getElementById('fullname')
-        "fullname",
-        "email",
-        "date",
-        "gender"
-    ].map((id) => document.getElementById(id))
+    const formInputs = ["fullname", "email", "date", "gender"].map((id) =>
+        document.getElementById(id)
+    );
+    console.log(formInputs);
+
+    const [fullNameInput, emailInput, dateInput, genderInput] = formInputs.map(
+        (input) => input.value.trim()
+    );
+
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    // Clear previous errors
+    document
+        .querySelectorAll(".form-group .error")
+        .forEach((field) => field.classList.remove("error"));
+    document
+        .querySelectorAll(".error-text")
+        .forEach((errorText) => errorText.remove());
+
+    // Adding case
+    if (fullNameInput === "") showError(formInputs[0], "Enter your name");
+    if (!emailPattern.test(emailInput)) showError(formInputs[1], "Please enter a valid email address");
+    validatePassword(passwordInput.value);
+    if (dateInput === "") showError(formInputs[2], "Enter your date");
+    if (genderInput === "") showError(formInputs[3], "Select your gender");
+
+    // Check if there are no errors, then proceed
+    if (!document.querySelectorAll(".form-group .error").length) {
+        form.style.display = "none";
+        thankYouMessage.style.display = "block";
+    }
+
+};
+
+// Toggle password visibility
+passToggleBtn.addEventListener("click", () => {
+    passToggleBtn.className = passwordInput.type === "password"
+        ? "fa-solid fa-eye-slash"
+        : "fa-solid fa-eye";
+    passwordInput.type = passwordInput.type === "password"
+        ? "text"
+        : "password"
 
 
-    // Getting input value
-    const [fullname, email, password, date, gender] = [
-        fullNameInput,
-        emailInput,
-        passwordInput,
-        dateInput,
-        genderInput
-    ].map((input) => input.value.trim())
+})
 
+form.addEventListener("submit", (e) => {
+    handleFormData(e);
+    passToggleBtn.style.bottom = "44%";
+});
 
-}
-
-
-
-
-
-
-form.addEventListener("submit", handleFormData)
