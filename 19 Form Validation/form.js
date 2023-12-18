@@ -69,15 +69,13 @@ const handleFormData = (e) => {
 
 // Toggle password visibility
 passToggleBtn.addEventListener("click", () => {
-    passToggleBtn.className = passwordInput.type === "password"
+    const isPasswordVisible = passwordInput.type === "password";
+    passToggleBtn.className = isPasswordVisible
         ? "fa-solid fa-eye-slash"
         : "fa-solid fa-eye";
-    passwordInput.type = passwordInput.type === "password"
-        ? "text"
-        : "password"
 
-
-})
+    passwordInput.type = isPasswordVisible ? "text" : "password";
+});
 
 form.addEventListener("submit", (e) => {
     handleFormData(e);
