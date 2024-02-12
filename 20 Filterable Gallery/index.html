@@ -1,20 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Filterable Gallery</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="filter-outline-filled.ico" type="image/x-icon">
+  </head>
 
-<body>
+  <body>
+    <div class="container">
+            <!-- Images Filter Buttons Section -->
+        <div class="row" id="filter-buttons">
+            <div class="col-12 text-center mt-4">
+                <button class="btn active" data-filter="all">Show All</button>
+                <button class="btn mx-1" data-filter="nature">Nature</button>
+                <button class="btn mx-1" data-filter="cars">Cars</button>
+                <button class="btn mx-1" data-filter="people">People</button>
+            </div>
+        </div>
 
 
-
-    <script src="app.js">
-
-    </script>
-</body>
-
+        <!-- Image Card -->
+            <div class="row px-2 mt-4 gap-3 d-flex align-items-center justify-content-center" id="filterable-cards">
+                    <div class="card p-0" data-name="nature">
+                        <img src="https://images.pexels.com/photos/707344/pexels-photo-707344.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="nature">
+                        <div class="card-body">
+                            <h6 class="card-title">Mountains</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolorem doloribus incidunt architecto nulla neque ipsa sunt, autem cum impedit repellendus odit nobis ex culpa animi, nisi asperiores ullam perferendis.</p>
+                        </div>
+                    </div>
+                    <div class="card p-0" data-name="nature">
+                        <img src="https://images.pexels.com/photos/2104152/pexels-photo-2104152.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="nature">
+                        <div class="card-body">
+                            <h6 class="card-title">Snow</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolorem doloribus incidunt architecto nulla neque ipsa sunt, autem cum impedit repellendus odit nobis ex culpa animi, nisi asperiores ullam perferendis.</p>
+                        </div>
+                    </div>
+                    <div class="card p-0" data-name="nature">
+                        <img src="https://images.pexels.com/photos/2092828/pexels-photo-2092828.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="nature">
+                        <div class="card-body">
+                            <h6 class="card-title">Jungle</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolorem doloribus incidunt architecto nulla neque ipsa sunt, autem cum impedit repellendus odit nobis ex culpa animi, nisi asperiores ullam perferendis.</p>
+                        </div>
+                    </div>
+                    <div class="card p-0" data-name="cars">
+                        <img src="https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="cars">
+                        <div class="card-body">
+                            <h6 class="card-title">Cars</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolorem doloribus incidunt architecto nulla neque ipsa sunt, autem cum impedit repellendus odit nobis ex culpa animi, nisi asperiores ullam perferendis.</p>
+                        </div>
+                    </div>
+                    <div class="card p-0" data-name="cars">
+                        <img src="https://images.pexels.com/photos/949796/pexels-photo-949796.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="cars">
+                        <div class="card-body">
+                            <h6 class="card-title">Cars</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolorem doloribus incidunt architecto nulla neque ipsa sunt, autem cum impedit repellendus odit nobis ex culpa animi, nisi asperiores ullam perferendis.</p>
+                        </div>
+                    </div>
+                    <div class="card p-0" data-name="cars">
+                        <img src="https://images.pexels.com/photos/951319/pexels-photo-951319.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="cars">
+                        <div class="card-body">
+                            <h6 class="card-title">Cars</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolorem doloribus incidunt architecto nulla neque ipsa sunt, autem cum impedit repellendus odit nobis ex culpa animi, nisi asperiores ullam perferendis.</p>
+                        </div>
+                    </div>
+                    <div class="card p-0" data-name="people">
+                        <img src="https://images.pexels.com/photos/307847/pexels-photo-307847.jpeg" alt="cars">
+                        <div class="card-body">
+                            <h6 class="card-title">People</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolorem doloribus incidunt architecto nulla neque ipsa sunt, autem cum impedit repellendus odit nobis ex culpa animi, nisi asperiores ullam perferendis.</p>
+                        </div>
+                    </div>
+                    <div class="card p-0" data-name="people">
+                        <img src="https://images.pexels.com/photos/925786/pexels-photo-925786.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="cars">
+                        <div class="card-body">
+                            <h6 class="card-title">People</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolorem doloribus incidunt architecto nulla neque ipsa sunt, autem cum impedit repellendus odit nobis ex culpa animi, nisi asperiores ullam perferendis.</p>
+                        </div>
+                    </div>
+            </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
 </html>
