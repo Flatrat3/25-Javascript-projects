@@ -88,7 +88,6 @@ background-color: #32393F
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 .image-container{
@@ -101,22 +100,18 @@ background-color: #32393F
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 1.2rem 3rem 0.5rem rgba(0, 0, 0, 0.4)
+    box-shadow: 0 1.2rem 3rem 0.5rem rgba(0, 0, 0, 0.4);
+    transition: all .4s ease;
 }
 
-.first-border{
-    border: 2px solid gray;
-    padding: 8px;
-    border-radius: 50%;
+audio{
+    margin-top: 20px;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: -24px;
+    display: none;
 }
-
-
-.second-border{
-    border: 2px solid red;
-    padding: 8px;
-    border-radius: 50%;
-}
-
 
 /* Image-container ends here */
 
@@ -178,3 +173,21 @@ background-color: #32393F
 .second_music_controls i:hover{
    color:  rgb(107, 107, 107);
 }
+
+
+
+.anime {
+    animation: rotatePlayer 3s linear infinite;
+  }
+
+
+  
+@keyframes rotatePlayer {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
