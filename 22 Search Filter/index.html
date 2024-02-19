@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Filter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="d-flex justify-content-center align-items-center flex-column">
+
+    <div class="search-container d-flex align-items-center gap-2 form-control w-100 mt-4 mb-5">
+        <i class="fa fa-search"></i>
+        <input type="text" id="search-input" placeholder="Search" autocomplete="off" class=" border-0 w-100 ">
+    </div>
+
+
+    <div class="main-container">
+        <div id="nothing-alert" style="display: none;">Nothing Found</div>
+
+        <div class="row row-cols-1 row-cols-md-4 g-2 car-container">
+            <div class="col p-2 main-col">
+                <div class="card main-card">
+                    <div class="image-container">
+                        <img src="https://images.pexels.com/photos/909907/pexels-photo-909907.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            class="card-img-top" alt="Audi">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Audi</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col p-2">
+                <div class="card main-card">
+                    <div class="image-container">
+                        <img src="https://images.pexels.com/photos/93615/pexels-photo-93615.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            class="card-img-top" alt="Audi">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">BMW</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col p-2">
+                <div class="card main-card">
+                    <div class="image-container">
+                        <img src="https://images.pexels.com/photos/1280553/pexels-photo-1280553.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            class="card-img-top" alt="Audi">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Chevrolet</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col p-2">
+                <div class="card main-card">
+                    <div class="image-container">
+                        <img src="https://images.pexels.com/photos/14187994/pexels-photo-14187994.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            class="card-img-top" alt="Audi">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Audi</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col p-2">
+                <div class="card main-card">
+                    <div class="image-container">
+                        <img src="https://images.pexels.com/photos/3608542/pexels-photo-3608542.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            class="card-img-top" alt="Audi">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Dodge</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col p-2">
+                <div class="card main-card">
+                    <div class="image-container">
+                        <img src="https://images.pexels.com/photos/337909/pexels-photo-337909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            class="card-img-top" alt="Audi">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Ferrari</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col p-2">
+                <div class="card main-card">
+                    <div class="image-container">
+                        <img src="https://images.pexels.com/photos/93652/pexels-photo-93652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            class="card-img-top" alt="Audi">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Jaguar</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col p-2">
+                <div class="card main-card">
+                    <div class="image-container">
+                        <img src="https://images.pexels.com/photos/13061032/pexels-photo-13061032.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            class="card-img-top" alt="Audi">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Kia</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col p-2">
+                <div class="card main-card">
+                    <div class="image-container">
+                        <img src="https://images.pexels.com/photos/3972755/pexels-photo-3972755.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            class="card-img-top" alt="Audi">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Lamborghini</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col p-2 ">
+                <div class="card main-card">
+                    <div class="image-container">
+                        <img src="https://images.pexels.com/photos/17852355/pexels-photo-17852355/free-photo-of-black-lotus-esprit.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            class="card-img-top" alt="Audi">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Lotus</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col p-2 ">
+                <div class="card main-card">
+                    <div class="image-container">
+                        <img src="https://images.pexels.com/photos/2365572/pexels-photo-2365572.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            class="card-img-top" alt="Audi">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Mercedes</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col p-2">
+                <div class="card main-card">
+                    <div class="image-container">
+                        <img src="https://images.pexels.com/photos/20411/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            class="card-img-top" alt="Audi">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Mini</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
