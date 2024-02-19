@@ -32,3 +32,7 @@ input#search-input {
 .main-card:hover {
   transform: scale(1.05);
 }
+
+.car-container .col {
+  padding: 8px !important;
+}
