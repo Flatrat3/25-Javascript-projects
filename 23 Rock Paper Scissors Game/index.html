@@ -12,16 +12,24 @@
     <h1 class="font-bold text-center text-3xl pt-[100px]">
         Rock Paper Scissors Game
     </h1>
-    <p class="mt-4 text-lg">Choose your move:</p>
+    <p class="mt-4 text-lg font-bold ">Choose your move:</p>
 
     <div class="buttons">
-        <button id="rock"></button>
-        <button id="paper"></button>
-        <button id="scissors"></button>
+        <button id="rock"
+            class="bg-red-600 border-none cursor-pointer rounded-md text-[3rem] p-1 mr-1">&#x1F44A;</button>
+        <button id="paper"
+            class="bg-blue-600 border-none cursor-pointer rounded-md text-[3rem] p-1 mr-1">&#x1f590;</button>
+        <button id="scissors"
+            class="bg-green-600 border-none cursor-pointer rounded-md text-[3rem] p-1 mr-1">&#x270c;</button>
     </div>
 
+    <p id="result" class="font-bold mt-2"></p>
+    <p id="scores" class="font-bold"> Your score:
+        <span id="user-score" class="text-blue-600">0</span> Computer score:
+        <span id="computer-score" class="text-red-600">0</span>
+    </p>
 
-
+    <script src="app.js"></script>
 </body>
 
 </html>
